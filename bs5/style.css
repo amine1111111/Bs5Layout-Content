@@ -1,0 +1,367 @@
+/* 
+
+A)  LAYOUT
+
+
+1 => breakpoints
+@media (){
+    sm   => 576  px
+    md   => 768  px
+    lg   => 992  px
+    xl   => 1200 px
+    xxl  => 1400 px
+}
+1 => breakpoints
+
+
+
+
+
+2=> GRID
+
+col-{breakpoint like -md} to get auto width that fits the content
+
+
+set how much col u want with row-cols-number
+make it responsive here
+ EX ) =>    row-cols-md-4
+
+nesting is also available
+
+2=> GRID
+
+
+
+
+
+
+
+
+3=>  COLUMNS
+
+
+u can use align-items-center & align-self-satrt     => vertical alignment
+
+
+u can use justify-content-center     => horizontal alignment
+
+
+
+)=> column break
+u can add a w-100 between line & u can do it in specific breakpoints like this
+<div class="w-100 d-none d-md-block"></div>
+)=> column break
+
+
+)=> reodrering
+u can use .order-1 with .col
+)=> reodrering
+
+
+
+)=> offseting columns
+use .offset to set a gap between columns  & make it responsive by .offset-md-5
+)=> offseting columns
+
+
+
+
+
+
+)=> Standalone column classes 
+u can use .col without any .row as a parent for it to give it a specific width
+)=> Standalone column classes 
+
+
+3=>  COLUMNS
+
+
+
+
+
+
+
+
+
+
+
+4 => GUTTERS
+
+Gutters are the p between your columns, used to responsively space and align content in the Bs grid system.
+// they start at 1.5rem (24px) & u can make it responsive
+
+//horizontal gutters
+
+//add the gx-n for .row & to avoid overflowing add px-n to their container
+or
+add a wrapper around .row with the .over-hidden  that should be the container also
+
+//horizontal gutters
+
+
+
+//vertical gutters   gy-n
+gy-2
+//vertical gutters
+
+
+// u can do vertical & horizontal guuter with g-2
+
+
+//no gutters
+g-0
+//no gutters
+
+4 => GUTTERS
+
+
+
+
+
+
+
+
+
+
+
+
+5 => cssGRID
+
+replace .row with .grid & .col with .g-col
+
+differences : F.f utilities don’t affect the CSS.G cols in the same way ....Gaps replaces gutters.... .g have no -.m{x-y} it cant be used to change .g g-s
+
+
+.g-col-4  .g-col-md-6  .gap-5
+
+
+(g-col-3 g-start-3)
+When there are no . on the grid items  each grid item will automatically be sized to one column.
+
+--bs-column : x in nested grid
+--bs-gap :
+--bs-rows : x
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+b) CONTENT
+
+
+
+//reboot
+
+                 //page defaults
+box-sizing : border-box ; for * & :before&:after
+No base font-size is declared on the <html>  but 16px is assumed as default
+
+                //headings
+all <h> have no .mt and mb-0.5rem
+
+                //Paragraphs 
+all <p> have no .mt & mb-.5rem
+
+                //links
+u can add --bs-link-opacity: x to a....a without href have no txt-decoration and white clr
+
+                //Horizontal rules 
+u can style <hr> via border(top) which have opacity-0.25 inherit clr automatically
+                  
+                 //Lists 
+ul & ol & dl have mt-0 & mb-1rem but nested lists have mb-0
+
+                //Inline code 
+For example, <code>&lt;section&gt;</code> should be wrapped as inline.
+
+                //user input     (key board)
+To edit settings, press <kbd><kbd>Ctrl</kbd> + <kbd>,</kbd></kbd>
+
+                //Pointers on buttons 
+role="button" => cursor pointer  (not necessary)
+
+                //Adress
+fontstyle i => normal & lineh(inherited) & mb-1rem  Preserve formatting by ending lns with <br>.
+
+                //Blockquote 
+default m ( 1em 40px ) => ( 0 0 1rem )
+
+                // Inline elements 
+
+
+//reboot
+
+
+
+
+
+
+
+
+//Typography
+
+   // headings
+
+.h1 => .h6
+
+   //Display headings 
+
+.display-(1-6)
+
+   //lead
+
+Make a paragraph stand out by adding (.lead)    to looka bit bigger
+
+
+   //Inline text elements 
+
+<del></del> (delete) 
+<s></s>   represents element that are no longer relevant or no longer accurate.
+<del> & <s> have text-decoration-line-trough
+
+
+   //Abbreviations 
+
+<abbr>
+Add .initialism to an abbreviation for a slightly smaller font-size.
+
+   //blokckQuote
+
+For quoting blocks of content from another src within ur doc. Wrap <blockquote class="blockquote"> around any HTML as the quote.
+
+
+   //Naming a source 
+
+The HTML spec requires that blockquote attribution be placed outside the <blockquote>.
+When providing attribution, 
+wrap your <blockquote> in a <figure> and use a <figcaption> or
+a block level element (e.g., <p>) with the .blockquote-footer class. 
+Be sure to wrap the name of the source work in <cite> as well.
+
+
+   //lists
+
+.list-unstyled => remove default ms on <li>
+
+   //inline
+
+(.list-inline & .list-inline-item) Remove a list’s bullets and apply some light m
+
+//Typography
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+//images
+
+.img-fluid => max-with : 100% & height :auto ;
+.img-thumbnail =>   give an img a rounded 1px border appearance.
+
+
+  //aligning img
+
+use float 
+
+<img src="..." class="rounded float-start" alt="...">
+<img src="..." class="rounded float-end" alt="...">
+
+or mx-auto d-block 
+
+or
+.text-center othe wrapper
+
+  //picture
+
+  If you are using the <pic> element to specify multiple <source> es for a specific <img>, m
+  make sure to add the .img-* classes to the <img> and not to the <picture> tag.
+
+*/
+
+
+
+
+
+
+
+
+/*
+
+//figures
+
+Anytime you need to d a piece of cont—like an img with an optional capt, consider using a figure
+
+
+//EX
+
+<figure class="figure">
+  <img src="..." class="figure-img img-fluid rounded" alt="...">
+  <figcaption class="figure-caption text-center">A caption for the above image.</figcaption>
+</figure>
+
+
+*/
